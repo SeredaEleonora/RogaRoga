@@ -10,7 +10,7 @@ namespace RogaRoga.Objects
 {
     internal class Arrow : GameObject
     {
-        public Arrow(Vector2 startPosition, GameObjectManager gameObjectManager, bool passable, char symbol = '-')
+        public Arrow(Vector2 startPosition, GameObjectManager gameObjectManager, bool passable, string symbol = " -")
             : base(symbol, startPosition, gameObjectManager, true)
         {
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using RogaRoga.Baze;
@@ -11,7 +10,7 @@ namespace RogaRoga.Characters
 {
     internal class MeleeEnemy : GameEntity
     {
-        public MeleeEnemy(Vector2 startPosition, GameObjectManager gameObjectManager, char symbol = 'A', int Health = 10)
+        public MeleeEnemy(Vector2 startPosition, GameObjectManager gameObjectManager, string symbol = "A ", int Health = 10)
             : base(symbol, startPosition, gameObjectManager, Health, false)
         {
 

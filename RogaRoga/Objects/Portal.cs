@@ -10,7 +10,7 @@ namespace RogaRoga.Objects
 {
     internal class Portal : GameObject // Портальчик на следующий кровень
     {
-        public Portal(Vector2 position, GameObjectManager gameObjectManager) : base('O', position, gameObjectManager, true)
+        public Portal(Vector2 position, GameObjectManager gameObjectManager) : base("O ", position, gameObjectManager, true)
         {
 
         }

@@ -13,7 +13,7 @@ namespace RogaRoga.World
         public int Width { get; private set; }
         public int Height { get; private set; }
 
-        private char[,] mapData;
+        private string[,] mapData;
 
         private readonly Random random = new Random();
 
@@ -21,7 +21,7 @@ namespace RogaRoga.World
         {
             Width = width;
             Height = height;
-            mapData = new char[width, height];
+            mapData = new string[width, height];
 
             GenerateMap();
         }
@@ -32,7 +32,7 @@ namespace RogaRoga.World
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    mapData[i, j] = '#';
+                    mapData[i, j] = "##";
                 }
             }
 
@@ -110,7 +110,7 @@ namespace RogaRoga.World
             {
                 for (int j = room.Y; j < room.Y + room.Height; j++)
                 {
-                    mapData[j, i] = ' ';
+                    mapData[j, i] = "  ";
                 }
             }
         }
@@ -120,16 +120,16 @@ namespace RogaRoga.World
 
             for (int x = Math.Min(startX, endX); x <= Math.Max(startX, endX); x++)
             {
-                mapData[startY, x] = ' ';
+                mapData[startY, x] = "  ";
             }
 
 
             for (int y = Math.Min(startY, endY); y <= Math.Max(startY, endY); y++)
             {
-                mapData[y, endX] = ' ';
+                mapData[y, endX] = "  ";
             }
         }
-        public char[,] GetMapData()
+        public string[,] GetMapData()
         {
             return mapData;
         }

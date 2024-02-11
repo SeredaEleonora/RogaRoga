@@ -21,7 +21,7 @@ namespace RogaRoga.Baze
                 _position = value;
             }
         }
-        public GameObject(char symbol, Vector2 position, GameObjectManager _gameObjectManager, bool passable)
+        public GameObject(string symbol, Vector2 position, GameObjectManager _gameObjectManager, bool passable)
         {
             Symbol = symbol;
             Position = position;
@@ -34,7 +34,7 @@ namespace RogaRoga.Baze
         public Vector2 PrePosition { get; set; }
         public GameObjectManager gameObjectManager { get; set; }
         public bool Passable { get; set; }
-        public char Symbol { get; set; }
+        public string Symbol { get; set; }
         public event Action<GameObject> OnDestroy;
         public event Action<GameObject, Vector2> OnMove;
         public virtual void Update()
