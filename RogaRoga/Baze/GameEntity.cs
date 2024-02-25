@@ -28,7 +28,7 @@ namespace RogaRoga.Baze
                 }
             }
         }
-        public GameEntity(string symbol, Vector2 position, GameObjectManager gameObjectManager, int hp, bool passable = false)
+        public GameEntity(char symbol, Vector2 position, GameObjectManager gameObjectManager, int hp, bool passable = false)
             : base(symbol, position, gameObjectManager, passable)
         {
             Hp = hp;

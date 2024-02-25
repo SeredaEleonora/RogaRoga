@@ -19,9 +19,9 @@ namespace RogaRoga.Managers
 
         public GameEntity[] ArcherEnemies { get; private set; }
 
-        public Game game { get; private set; }
+        public Game Game { get; private set; }
 
-        public Map map { get; private set; }
+        public Maze Maze { get; private set; }
 
         public GameObjectManager(int meleeEnemyNumber, int archerEnemyNumber)
         {
@@ -44,9 +44,17 @@ namespace RogaRoga.Managers
             }
         }
 
-        public bool IsPlaceFree(Vector2 position, Map map)
+        public bool IsPlaceFree(Vector2 position)
         {
-
+            for (int i = GameObjects.Count - 1; i >= 0; i--)
+            {
+                GameObject gameObject = GameObjects[i];
+                if (gameObject.Position.Equals(position) && gameObject.Passable == false)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public void RegisterGameObject(GameObject gameObject)
@@ -54,6 +62,17 @@ namespace RogaRoga.Managers
             GameObjects.Add(gameObject);
         }
 
+        public GameObject GetGameObjectAtPosition(Vector2 position)
+        {
+            foreach (GameObject gameObject in GameObjects)
+            {
+                if (gameObject.Position.Equals(position))
+                {
+                    return gameObject;
+                }
+            }
+            return null;
+        }
         public void DestroyGameObject(GameObject gameObject)
         {
             GameObjects.Remove(gameObject);
